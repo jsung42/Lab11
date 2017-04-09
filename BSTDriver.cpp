@@ -41,20 +41,31 @@ bool MyApp::OnInit()
       bst->insert(cd);
    }
    delete iter;
-
-   
+	
    //DO THIS
    //test your tree sort method
    CD** unsorted_cds = cds->toArray();
    CD** sorted_cds = BinarySearchTree<CD>::treeSort(unsorted_cds, num_items, &CD::compare_items, &CD::compare_keys);
    
-   //test to see if the sorting has worked
+   //This section of code below is commented to avoid having the screen being clustered up by a ton of outputs. 
+   //Also, it shows a completed, unaltered BinarySearchTree tree (after sending it to ToArray and then treeSort) 
+   //before testing remove function by removing some title to see if the remove functon is working properly.
+   
    /*
+   //test to see if the tree sort method has worked by display the sorted list of cds. 
    for(int i = 0; i < num_items; i++)
    {
 	   CD* cd = sorted_cds[i];
 	   cd->displayCD();
    }
+   */
+
+   /*
+   //Testing remove function by removing two of the title from the tree.
+   String* title = new String("Waiting for the End to Come");
+   String* title2 = new String("Wither");
+   bst->remove(title);
+   bst->remove(title2);
    */
   
    delete cds;

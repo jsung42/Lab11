@@ -63,11 +63,7 @@ template < class T >
 void BinarySearchTree<T>::remove(String* sk)
 {
 	//DO THIS
-	TreeNode<T>* current = getRootNode(); 
-	current = removeItem(current, sk); 
-	sze--; 
-	setRootNode(current); 
-
+	root = removeItem(root, sk);
 }
 
 template < class T >
